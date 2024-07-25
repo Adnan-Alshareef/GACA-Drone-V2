@@ -1,0 +1,358 @@
+.log-page {
+   background-color: #fff;
+}
+
+.login-form {
+    background-color: #fff;
+    height: 100vh;
+}
+
+.login-str {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 30px;
+}
+
+img.login-brand {
+    width: 140px;
+}
+
+.UAS-Title {
+    color: #0075C9;
+    font-family: 'GB';
+    font-size: 42px;
+}
+
+.UAS-subTitle {
+    font-family: 'GB';
+    font-size: 24px;
+    color: #274479;
+}
+
+a.loginToggle {
+    display: inline-block;
+    color: #58595B;
+    font-size: 28px;
+    font-family: 'GR';
+    width: 100%;
+    transition: width .3s ease;
+}
+
+a.loginToggle.unactive {
+    opacity: .4;
+    transition: all .3s ease;
+}
+
+a.loginToggle.unactive:hover {
+    opacity: 1;
+    transition: all .3s;
+    font-family: 'GB';
+    color: #0075C9;
+    color: #274479;
+}
+
+a.loginToggle:hover {
+    color: #274479;
+    transition: all .3s;
+}
+
+
+.login-option {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+.login-option .loginToggle:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.login-option .loginToggle.active {
+
+    color: #0075C9;
+    font-family: 'GB';
+    /* Adjust color as needed */
+}
+
+.loginToggle {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000;
+    /* Adjust color as needed */
+    transition: color 0.3s ease;
+}
+
+.loginToggle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0075C9;
+    /* Adjust color as needed */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.loginToggle.unactive::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #274479;
+    /* Adjust color as needed */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.loginToggle:not(.active):hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.loginToggle.active::after {
+    transform: scaleX(1);
+}
+
+/* Ensure the underline stays on active item even on hover */
+.loginToggle.active:hover::after {
+    transform: scaleX(1);
+}
+
+/* Additional styling for active state if needed */
+.loginToggle.active {
+    font-family: 'GB';
+    color: #0075C9
+        /* Optional: makes the active text bold */
+}
+
+
+.nic-btn {
+    background-color: #319795 !important;
+    color: #fff;
+    transition: all .3s;
+}
+.nic-btn:hover {
+    background-color: #1c7977 !important;
+    color: #fff;
+    transition: all .3s;
+}
+
+.nic-icon {
+    /* background: url(./images/nafath.svg) no-repeat 20% 50%; */
+}
+
+.nic-btn>span::before {
+    border-left: 1px solid #fff;
+}
+
+.nic-cta {
+    /* border-left: 2px solid #fff;*/
+    padding: 0 5px;
+}
+
+.sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sign-in>div {
+    margin: 0 3px;
+}
+
+.drone-art {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.saudi-map {
+    position: relative;
+}
+
+.Drone-pic {
+    position: absolute;
+
+    transform: translateX(-50%);
+    top: 130px;
+    right: 153px;
+}
+
+.drone-side-cta {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.login-nav {
+    padding: 0 !important;
+}
+
+.login-nav-brand {
+    margin: 0 !important;
+}
+
+.user-helps-links a {
+    color: #0075C9;
+    font-family: 'GB';
+    text-decoration: underline !important;
+    transition: all .3s;
+}
+
+.user-helps-links a:link {
+    text-decoration: none;
+}
+
+.user-helps-links a:visited {
+    text-decoration: none;
+}
+
+.user-helps-links a:hover {
+    text-decoration: none;
+    color: #274479;
+
+}
+
+.user-helps-links a:active {
+    text-decoration: none;
+}
+
+.user-helps {
+    font-size: 16px;
+}
+
+.PButton {
+    background-color: #0075C9;
+    color: #fff;
+    border: 1px soli #0075C9;
+    transition: all .3s;
+}
+.PButton:hover{
+    background-color: #274479;
+    color: #fff;
+    transition: all .3s;
+
+}
+
+.SButton {
+    background-color: #fff;
+    color: #0075C9;
+    border: 1px solid #0075C9;
+    transition: all .3s;
+
+}
+.SButton:hover {
+    background-color: #DEE4E9;
+    color: #0075C9;
+    border: 1px solid #0075C9;
+    transition: all .3s;
+
+}
+
+.ligt-xs-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ligt-xs-footer>div {
+    margin: 0 4px;
+}
+
+.Login-Card {
+    height: 80%;
+    width: 100%;
+}
+
+.Login-Card.outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.Login-Card .inner {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    flex-direction: column;
+}
+
+.ligt-xs-footer {
+    font-size: 10px;
+}
+
+
+@media (min-width: 992px) and (max-width: 1231px) {
+    .Login-Card.inner {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 506px) and (max-width: 767px) {
+    .Login-Card.inner {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 305px) and (max-width: 505px) {
+    .Login-Card.inner {
+        width: 100% !important;
+    }
+
+    .login-str {
+        padding: 30px 0;
+        /*height: 100%;*/
+    }
+
+    .login-form {
+        /*height: 100%;*/
+    }
+
+    .log-page {
+        /*height: 100%;*/
+    }
+}
+
+.login-page{
+    min-height: 100vh;
+}
+.right-side{
+    background-image: url(../images/BG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.login-side{
+    display: grid;
+grid-template-rows: auto 1fr auto;
+min-height: 100vh;
+padding: 20px 0;
+background-color: #fff !important;
+}
+
+.loginform{
+    overflow-y: auto;
+}

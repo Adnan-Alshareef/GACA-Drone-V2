@@ -1,0 +1,30 @@
+/* ======= Fonts ======= */
+@font-face {
+    font-family: 'GL';
+    src: url('GretaArabicAR_LTLight.eot');
+    src: url('GretaArabicAR_LTLight.eot') format('embedded-opentype'),
+        url('GretaArabicAR_LTLight.woff2') format('woff2'),
+        url('GretaArabicAR_LTLight.woff') format('woff'),
+        url('GretaArabicAR_LTLight.ttf') format('truetype'),
+        url('GretaArabicAR_LTLight.svg#GretaArabicAR_LTLight') format('svg');
+}
+
+@font-face {
+    font-family: 'GB';
+    src: url('GretaArabicAR_LTBold.eot');
+    src: url('GretaArabicAR_LTBold.eot') format('embedded-opentype'),
+        url('GretaArabicAR_LTBold.woff2') format('woff2'),
+        url('GretaArabicAR_LTBold.woff') format('woff'),
+        url('GretaArabicAR_LTBold.ttf') format('truetype'),
+        url('GretaArabicAR_LTBold.svg#GretaArabicAR_LTBold') format('svg');
+}
+
+@font-face {
+    font-family: 'GR';
+    src: url('GretaArabicAR_LTRegular.eot');
+    src: url('GretaArabicAR_LTRegular.eot') format('embedded-opentype'),
+        url('GretaArabicAR_LTRegular.woff2') format('woff2'),
+        url('GretaArabicAR_LTRegular.woff') format('woff'),
+        url('GretaArabicAR_LTRegular.ttf') format('truetype'),
+        url('GretaArabicAR_LTRegular.svg#GretaArabicAR_LTRegular') format('svg');
+}

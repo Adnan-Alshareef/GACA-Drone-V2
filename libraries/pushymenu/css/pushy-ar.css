@@ -1,0 +1,113 @@
+.en {
+    font-family: sans-serif !important;
+    text-align: right;
+    color: #00a5da !important;
+}
+
+.kaia-ar {
+    color: white;
+    font-size: 20px;
+    font-family: GL;
+    margin: 15px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.menuLogo {
+    margin-right: 70px;
+}
+
+ul li {
+    float: inline-start;
+    list-style-type: none;
+}
+
+@media(max-width:768px) {
+    .menu-btn {
+        display: block;
+        background: none;
+        border: 0;
+        color: white;
+        font-size: 35px;
+        font-weight: 100;
+        outline: none!important;
+        float: left;
+        margin-top: 0px;
+    }
+    .mobile-menu {
+        margin-top: 15%;
+        padding-right: 0;
+    }
+    .mobile-menu button {
+        outline: none
+    }
+    .mobile-menu>li:not(:last-child) {
+        border-bottom: 1px solid #1e2a5e
+    }
+}
+
+.pushy {
+    background: #263576!important;
+    direction: rtl;
+    text-align: right;
+}
+
+.pushy-submenu button {
+    /* different */
+    text-align: right;
+    font-size: 24px;
+    color: #fff;
+    font-family: GL;
+}
+
+.sideMenuHead {
+    padding-right: 20px;
+    /* dif */
+    color: #5578ff;
+}
+
+.pushy a {
+    color: #fff;
+    font-size: 24px;
+    font-family: GL;
+}
+
+
+/* diff */
+
+.pushy .sideMenuHead a {
+    color: #2abfee;
+    padding-right: 0;
+}
+
+.pushy ul li a:hover {
+    color: #4c75ff;
+}
+
+.pushy-submenu>a::after,
+.pushy-submenu>button::after {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    left: 20px;
+    right: auto;
+    top: 40%;
+}
+
+.pushy-submenu.pushy-submenu-open>button::after {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+}
+
+.pushy-submenu a {
+    color: #ffffff;
+    padding-right: 50px;
+}
+
+.pushy {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}

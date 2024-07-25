@@ -1,0 +1,96 @@
+.lang_switcher_button {
+    font-family: sans-serif !important;
+    color: #00a5da !important;
+    font-family: GL !important;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.menuLogo {
+    margin-left: 70px;
+}
+
+.settings_title h2 img {
+    margin-right: 35px;
+}
+
+@media(max-width:1200px) {
+    .menu-btn {
+        display: block;
+        background: none;
+        border: 0;
+        color: white;
+        font-size: 35px;
+        font-weight: 100;
+        outline: none !important;
+        float: left;
+        margin-top: 0px;
+    }
+
+    .mobile-menu {
+        margin-top: 15%;
+        padding-left: 0;
+    }
+
+    .mobile-menu button {
+        outline: none
+    }
+
+    .mobile-menu>li:not(:last-child) {
+        border-bottom: 1px solid #1e2a5e
+    }
+}
+
+.pushy {
+    background: #263576 !important;
+}
+
+.pushy-submenu button {
+    text-align: left;
+    font-size: 24px !important;
+    color: #fff;
+    font-family: GL;
+}
+
+.sideMenuHead {
+    padding-left: 30px;
+    color: #5578ff;
+}
+
+.pushy .sideMenuHead a {
+    color: #2abfee;
+    padding-left: 0;
+}
+
+.pushy ul li a:hover {
+    color: #4c75ff;
+}
+
+.pushy-submenu>a::after,
+.pushy-submenu>button::after {
+    /* diff */
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    right: 20px;
+    left: auto;
+    top: 40%;
+}
+
+.pushy-submenu.pushy-submenu-open>button::after {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+}
+
+.pushy-submenu a {
+    color: #ffffff;
+    padding-left: 50px;
+}
+
+.pushy {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}

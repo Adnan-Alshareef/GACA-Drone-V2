@@ -215,6 +215,9 @@ min-width: 100% !important;
     font-size: 30px;
 }
 
+.subsize{
+    font-size: 16px;
+}
 .Pcolor {
     color: #274479;
 }
@@ -407,6 +410,7 @@ min-width: 100% !important;
 .sub-secmargin {
     margin: 50px 0;
 }
+
 
 .cuatroItem {
     display: flex;
@@ -641,9 +645,8 @@ footer.darkfooter {
 
 .footer-rights {
     color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  
+    display: inline-block;
 }
 
 .footer-links {
@@ -669,6 +672,9 @@ footer.darkfooter {
     transform: translate(-50%, 0%);
     margin-top: 20px;
     padding: 10px;
+}
+a.contactUs:hover{
+    color: #e6e4e4;
 }
 
 nav.sticky>div.navbar_>ul.nav-items>li.nav-item a {

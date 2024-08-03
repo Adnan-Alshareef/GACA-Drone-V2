@@ -5343,7 +5343,7 @@ fieldset:disabled .btn {
 
 
 .accordion-button:not(.collapsed)::before {
-  background-image: url(/Drone_V2/images/toggleon_icon.png);
+  background-image: url(/images/toggleon_icon.png);
 }
 
 
@@ -5355,7 +5355,7 @@ fieldset:disabled .btn {
   height: 2.25rem;
   margin-right: 20px;
   content: "";
-  background-image: url(/Drone_V2/images/toggleoff_icon.png);
+  background-image: url(/images/toggleoff_icon.png);
   background-repeat: no-repeat;
   background-size: 2.25rem;
   transition: transform 0.2s ease-in-out;

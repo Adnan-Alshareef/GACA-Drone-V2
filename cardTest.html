@@ -1,237 +1,821 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./fonts/fonts.css">
     <link rel="stylesheet" href="./libraries/bootstrap-5.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="./libraries/pushymenu/css/pushy.css">
+    <link rel="stylesheet" href="./libraries/pushymenu/css/pushy-en.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     <style>
-        .services-aim {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.cards-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 400px;
-    overflow: hidden;
-    transition: width 0.5s ease-in-out, box-shadow 0.3s;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: white;
-    cursor: pointer;
-    box-shadow: 0px 10px 10px rgba(0, 117, 201, .25);
-    height: 300px;
-    padding: 20px;
-    justify-content: center;
-}
-
-.card.expanded {
-    width: 700px;
-}
-
-.card.expanded .content {
-    display: block;
-    max-width: 650px;
-    opacity: 1;
-}
-
-.card .content {
-    flex: 1;
-    padding: 20px;
-    max-width: 0;
-    overflow: hidden;
-    transition: max-width 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    opacity: 0;
-    display: none;
-    height: 300px;
-    text-align: start;
-}
-
-.card.expanded .image-container {
-    transform: scale(0.95);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    transition: all .5s;
-    box-shadow: 0px 15px 30px rgba(0, 117, 201, .5);
-}
-
-.image-container {
-    flex: 0 0 auto;
-    width: 150px;
-    transition: transform 0.5s ease-in-out;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.cta-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #0056B3;
-}
-
-/* Media Queries */
-@media (max-width: 1024px) {
-    .cards-container {
-        flex-direction: column;
-    }
-
-    .card {
-        width: 100%;
-        flex-direction: column;
-        height: auto;
-        cursor: default; /* Disable pointer cursor on mobile */
-    }
-
-    .card .image-container {
-        width: 100%;
-    }
-
-    .card .image-container img {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .card .content {
-        max-width: 100%;
-        opacity: 1;
-        display: block;
-    }
-
-    .card.expanded {
-        width: 100%;
-    }
-}
-
+        body{
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+        }
     </style>
-</head>
-<body>
-    <div class="services-aim container">
-        <div class="cards-container">
-            <!-- Card 1 (Initially Open) -->
-            <div id="card_1" class="card expanded">
-                <div class="image-container">
-                    <img src="./images/Individuals.png" alt="Individuals">
-                </div>
-                <div class="content">
-                    <div class="content-container_">
-                        <div class="Greycolor upnormalsize Pfont">
-                            UAS for individuals
-                        </div>
-                        <div>
-                            <p class="Greycolor Tfont">A comprehensive suite of services tailored specifically for companies seeking to operate UAS for recreational purposes in Saudi Arabia.</p>
-                            <p class="Greycolor Tfont">Our platform provides a streamlined process to ensure that your business can easily comply with aviation regulations while enjoying the benefits of UAS technology.</p>
-                        </div>
-                        <div class="card-cta">
-                            <div>
-                                <a class="reg-btn" href="#">Registration</a>
-                            </div>
-                            <div>
-                                <a class="bus-btn" href="#">Business Services Catalogue</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
     
-            <!-- Card 2 (Initially Closed) -->
-            <div id="card_2" class="card">
-                <div class="image-container">
-                    <img src="./images/Companies_icon.png" alt="Companies">
+</head>
+
+<body>
+    <div>
+        <div class="hero">
+            <nav id="main-nav" class="container navbar navbar-expand-lg navbar-dark">
+                <div class="navbar_">
+                    <div class="UAS-Logo">
+                        <img src="./images/Logo.png" alt="">
+                    </div>
+                    <ul class="nav-items">
+                        <li class="nav-item Acive"><a href="#Home">Home</a></li>
+                        <li class="nav-item"><a href="#about">About UAS</a></li>
+                        <li class="nav-item"><a href="#conditions">Terms & Regulations</a></li>
+                        <li class="nav-item"><a href="#Faq">FAQ</a></li>
+                        <li class="nav-item"><a href="#Contact">Contact Us</a></li>
+                    </ul>
+                    <div class="nav-cta">
+                        <a class="account-btn" href="#" target="_blank">My Account</a>
+                        <div class="nav-item dropdown m-0 lang-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                English
+                            </a>
+                            <ul class="dropdown-menu show-lang" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">العربية</a></li>
+                            </ul>
+                        </div>
+                        <button class="menu-btn">☰</button>
+                    </div>
                 </div>
-                <div class="content">
-                    <div class="content-container_">
-                        <div class="Greycolor upnormalsize Pfont">
-                            UAS for Companies
-                        </div>
-                        <div>
-                            <p class="Greycolor Tfont">A comprehensive suite of services tailored specifically for companies seeking to operate UAS for recreational purposes in Saudi Arabia.</p>
-                            <p class="Greycolor Tfont">Our platform provides a streamlined process to ensure that your business can easily comply with aviation regulations while enjoying the benefits of UAS technology.</p>
-                        </div>
-                        <div class="card-cta">
-                            <div>
-                                <a class="reg-btn" href="#">Registration</a>
+    
+    
+            </nav>
+    
+            <!-- Pushy Menu -->
+            <nav class="pushy pushy-left">
+                <div class="pushy-content">
+                    <a href="#" class="mobile-x">×</a>
+                    <div id="op-mobile" class="text-center"></div>
+                    <ul class="mobile-menu">
+                        <li><a href="./00_Register_ar.html" class="ar">العربية</a></li>
+                        <li class="active"><a href="#">My Drones</a></li>
+                        <li><a href="#">My Licences</a></li>
+                        <li class="pushy-submenu">
+                            <button>Tab1</button>
+                            <ul>
+                                <li class="pushy-link">
+                                    <div>
+                                        <div class="sideMenuHead"><a href="#">link1</a></div>
+                                    </div>
+                                    <div>
+                                        <div class="sideMenuHead"><a href="#">link2</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pushy-submenu">
+                            <button>Tab2</button>
+                            <ul>
+                                <li class="pushy-link">
+                                    <div>
+                                        <div class="sideMenuHead"><a href="#">link1</a></div>
+                                    </div>
+                                    <div>
+                                        <div class="sideMenuHead"><a href="#">link2</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pushy-submenu">
+                            <button>Tab3</button>
+                            <ul>
+                                <li class="pushy-link">
+                                    <div>
+                                        <div class="sideMenuHead"><a href="#">link1</a></div>
+                                    </div>
+                                    <div>
+                                        <div class="sideMenuHead"><a href="#">link2</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+    
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Site Overlay -->
+            <div class="site-overlay"></div>
+            <section id="Home">
+                <div class="container">
+                    <div class="row align-items-center ">
+                        <div class="col-xxl-6 col-xl-12 col-12 order-xxl-1 order-2 mt-lg-0 mt-mb-0 mt-5 mb-5 hero-cta">
+                            <div class="heroTitle text-center text-xxl-start">
+                                <h4 class="xsize Pcolor Sfont animate__animated animate__fadeInLeft">Welcome to the Future
+                                </h4>
+                                <h1 class="xlsize Scolor Pfont">Unlock skies of Saudia Arabia with ease and
+                                    confidence</h1>
                             </div>
-                            <div>
-                                <a class="bus-btn" href="#">Business Services Catalogue</a>
+                            <div class="text-center text-xxl-start">
+                                <a class="main-cta" href="#">Start Now</a>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-xl-12 col-12 order-xxl-2  order-1">
+                            <div class="img-holder text-center">
+                                <img class="hero-img animate__animated animate__fadeInLeft animate__slow"
+                                    src="./images/Hero_Image.png" alt="">
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+ 
+    <div class="m-content">
+        <div class="page-body">
+            <div class="main-content ">
+                <section id="about">
+                    <div class="about-sec">
+                        <div class="text-center">
+                            <div class="sec-divider">
+                                <h2 class="lsize Tcolor Pfont">Welcome to GACA UAS</h2>
+                                <div class="container">
+                                    <div class="pargraph-xxl Tcolor Tfont m-2x">
+                                        GACA UAS is innovative platform, designed to streamline the process of authorize
+                                        licenses
+                                        for
+                                        unmanned aircraft systems (UAS). Whether you're an individual enthusiast or a
+                                        company, UAS
+                                        portal offers approvals for recreational and personal use.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="subsic-divider">
+                                <h4 class="xsize Tcolor Pfont animate__fadeInRightBig">Who can use UAS services ?</h4>
+                            </div>
+                            <div class="services-aim container">
+                                <div class="cards-container">
+                                    <div class="row">
+                                    </div>
+                                    <!-- Card 1 (Initially Open) -->
+                                    <div id="card_1" class="card expanded">
+                                        <div class="image-container">
+                                            <img src="./images/Individuals.png" alt="Individuals">
+                                        </div>
+                                        <div class="content">
+                                            <div class="content-container_">
+                                                <div class="Greycolor upnormalsize Pfont">
+                                                    UAS for individuals
+                                                </div>
+                                                <div>
+                                                    <p class="Greycolor Tfont">A comprehensive suite of services tailored
+                                                        specifically for companies seeking to operate UAS for recreational
+                                                        purposes in Saudi Arabia.</p>
+                                                    <p class="Greycolor Tfont">Our platform provides a streamlined process
+                                                        to ensure that your business can easily comply with aviation
+                                                        regulations while enjoying the benefits of UAS technology.</p>
+                                                </div>
+                                                <div class="card-cta">
+                                                    <div>
+                                                        <a class="reg-btn" href="#">Registration</a>
+                                                    </div>
+                                                    <div>
+                                                        <a class="bus-btn" href="#">Business Services Catalogue</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Card 2 (Initially Closed) -->
+                                    <div id="card_2" class="card">
+                                        <div class="image-container">
+                                            <img src="./images/Companies_icon.png" alt="Companies">
+                                        </div>
+                                        <div class="content">
+                                            <div class="content-container_">
+                                                <div class="Greycolor upnormalsize Pfont">
+                                                    UAS for Companies
+                                                </div>
+                                                <div>
+                                                    <p class="Greycolor Tfont">A comprehensive suite of services tailored
+                                                        specifically for companies seeking to operate UAS for recreational
+                                                        purposes in Saudi Arabia.</p>
+                                                    <p class="Greycolor Tfont">Our platform provides a streamlined process
+                                                        to ensure that your business can easily comply with aviation
+                                                        regulations while enjoying the benefits of UAS technology.</p>
+                                                </div>
+                                                <div class="card-cta">
+                                                    <div>
+                                                        <a class="reg-btn" href="#">Registration</a>
+                                                    </div>
+                                                    <div>
+                                                        <a class="bus-btn" href="#">Business Services Catalogue</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="container services-aim-xs">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 mt-2 mb-3">
+                                        <div class="fullCard">
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-12 col-md-12">
+                                                    <div class="image-outer">
+                                                        <div class="image-container">
+                                                            <img src="./images/Companies_icon.png" alt="Companies">
+                                                        </div>
+                                                    </div>
+    
+                                                </div>
+                                                <div class="col-xl-9 col-lg-12 col-md-12">
+                                                    <div class="">
+                                                        <div class="content-container_ full-card-directions">
+                                                            <div class="Greycolor upnormalsize Pfont">
+                                                                UAS for Companies
+                                                            </div>
+                                                            <div>
+                                                                <p class="Greycolor Tfont">A comprehensive suite of services
+                                                                    tailored
+                                                                    specifically for companies seeking to operate UAS for
+                                                                    recreational
+                                                                    purposes in Saudi Arabia.</p>
+                                                                <p class="Greycolor Tfont">Our platform provides a
+                                                                    streamlined process
+                                                                    to ensure that your business can easily comply with
+                                                                    aviation
+                                                                    regulations while enjoying the benefits of UAS
+                                                                    technology.</p>
+                                                            </div>
+                                                            <div class="card-cta">
+                                                                <div>
+                                                                    <a class="reg-btn" href="#">Registration</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a class="bus-btn" href="#">Business Services
+                                                                        Catalogue</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mt-2 mb-3">
+                                        <div class="fullCard">
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-12 ">
+                                                    <div class="image-outer">
+                                                        <div class="image-container">
+                                                            <img src="./images/Companies_icon.png" alt="Companies">
+                                                        </div>
+                                                    </div>
+    
+                                                </div>
+                                                <div class="col-xl-9 col-lg-12 ">
+                                                    <div class="">
+                                                        <div class="content-container_ full-card-directions">
+                                                            <div class="Greycolor upnormalsize Pfont">
+                                                                UAS for Companies
+                                                            </div>
+                                                            <div>
+                                                                <p class="Greycolor Tfont">A comprehensive suite of services
+                                                                    tailored
+                                                                    specifically for companies seeking to operate UAS for
+                                                                    recreational
+                                                                    purposes in Saudi Arabia.</p>
+                                                                <p class="Greycolor Tfont">Our platform provides a
+                                                                    streamlined process
+                                                                    to ensure that your business can easily comply with
+                                                                    aviation
+                                                                    regulations while enjoying the benefits of UAS
+                                                                    technology.</p>
+                                                            </div>
+                                                            <div class="card-cta">
+                                                                <div>
+                                                                    <a class="reg-btn" href="#">Registration</a>
+                                                                </div>
+                                                                <div>
+                                                                    <a class="bus-btn" href="#">Business Services
+                                                                        Catalogue</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </section>
+    
+    
+        </div>
+        <div class="container">
+            <section id="conditions">
+                <div class="secmargin">
+                    <div class="secTitle">
+                        <div>
+                            <img src="./images/saudisymbol.png" alt="Saudi">
+                        </div>
+                        <div class="Pfont Scolor secsize">
+                            Drone approval conditions
+                        </div>
+                    </div>
+                    <div class="sub-secmargin">
+                        <div class="row justify-content-center justify-content-lg-start">
+                            <div class="col-lg-3 col-md-4 col-6 mt-2 mb-2">
+                                <div class="drone-approval-item">
+                                    <div class="img-approval">
+                                        <img src="./images/DroneWeight.png" alt="">
+                                    </div>
+                                    <div class="drone-approval-item-spacing DroneWeight-border">
+                                        <div class="upnormalsize Pfont DroneWeight">
+                                            Drone Weight
+                                        </div>
+                                        <div>
+                                            Donec sed augue mauris. Vestibulum eu eleifend <span class="Pfont">NA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6 mt-2 mb-2">
+                                <div class="drone-approval-item">
+                                    <div>
+                                        <img src="./images/Manufacturer.png" alt="">
+                                    </div>
+                                    <div class="drone-approval-item-spacing Manufacturer-border">
+                                        <div class="upnormalsize Pfont Manufacturer">
+                                            Manufacturer
+                                        </div>
+                                        <div>
+                                            Donec sed augue mauris. Vestibulum eu eleifend <span class="Pfont">NA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6 mt-2 mb-2">
+                                <div class="drone-approval-item">
+                                    <div>
+                                        <img src="./images/Model.png" alt="">
+                                    </div>
+                                    <div class="drone-approval-item-spacing Model-border">
+                                        <div class="upnormalsize Pfont Model">
+                                            Model
+                                        </div>
+                                        <div>
+                                            Donec sed augue mauris. Vestibulum eu eleifend <span class="Pfont">NA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-lg-3 col-md-4 col-6 mt-2 mb-2">
+                                <div class="drone-approval-item">
+                                    <div>
+                                        <img src="./images/Serial Number.png" alt="">
+                                    </div>
+                                    <div class="drone-approval-item-spacing SerialNumber-border">
+                                        <div class="upnormalsize Pfont SerialNumber">
+                                            Serial Number
+                                        </div>
+                                        <div>
+                                            Donec sed augue mauris. Vestibulum eu eleifend <span class="Pfont">NA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-lg-3 col-md-4 col-6 mt-2 mb-2">
+                                <div class="drone-approval-item">
+                                    <div>
+                                        <img src="./images/Ministry_of_Commerce.png" alt="">
+                                    </div>
+                                    <div class="drone-approval-item-spacing MinistryofCommerce-border">
+                                        <div class="upnormalsize Pfont MinistryofCommerce">
+                                            ministry of commerce
+                                        </div>
+                                        <div>
+                                            Donec sed augue mauris. Vestibulum eu eleifend <span class="Pfont">NA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6 mt-2 mb-2">
+                                <div class="drone-approval-item">
+                                    <div>
+                                        <img src="./images/Zakat_and_Tax.png" alt="">
+                                    </div>
+                                    <div class="drone-approval-item-spacing ZakatandTax-border">
+                                        <div class="upnormalsize Pfont ZakatandTax">
+                                            Zakat and Tax
+                                        </div>
+                                        <div>
+                                            Donec sed augue mauris. Vestibulum eu eleifend <span class="Pfont">NA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-6 mt-2 mb-2">
+                                <div class="drone-approval-item">
+                                    <div>
+                                        <img src="./images/Nafath.png" alt="">
+                                    </div>
+                                    <div class="drone-approval-item-spacing Nafath-border">
+                                        <div class="upnormalsize Pfont Nafath">
+                                            Nafath
+                                        </div>
+                                        <div>
+                                            Donec sed augue mauris. Vestibulum eu eleifend <span class="Pfont">NA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="upnormalsize links">
+                        <a href="#">Read more about Saudi aviation regulations <span><img src="./images/Arrow.png"
+                                    alt=""></span></a>
+                    </div>
+                </div>
+                <div class="secmargin">
+                    <div class="secTitle">
+                        <div>
+                            <img src="./images/Approvedv.png" alt="Saudi">
+                        </div>
+                        <div class="Pfont Scolor secsize">
+                            Drone approval conditions
+                        </div>
+                    </div>
+                    <div class="sub-secmargin">
+    
+                        <div class="row">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="DroneCard">
+                                            <div class="DroneCard_inner">
+                                                <div class="DroneCard_image">
+                                                    <img src="./images/Drone_2.png" alt="">
+                                                </div>
+                                                <div>
+                                                    <div class="upnormalsize Pfont Scolor">
+                                                        DJI 2030
+                                                    </div>
+                                                    <div style="overflow: hidden;">
+                                                        platform provides process to ensure that your business can easily
+                                                        platform provides process to ensure that your business can easily
+    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="DroneCard">
+                                            <div class="DroneCard_inner">
+                                                <div class="DroneCard_image">
+                                                    <img src="./images/Drone_3.png" alt="">
+                                                </div>
+                                                <div>
+                                                    <div class="upnormalsize Pfont Scolor">
+                                                        DJI 2030
+                                                    </div>
+                                                    <div>
+                                                        platform provides process to ensure that your business can easily
+    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="DroneCard">
+                                            <div class="DroneCard_inner">
+                                                <div class="DroneCard_image">
+                                                    <img src="./images/Drone_1.png" alt="">
+                                                </div>
+                                                <div>
+                                                    <div class="upnormalsize Pfont Scolor">
+                                                        DJI 2030
+                                                    </div>
+                                                    <div>
+                                                        platform provides process to ensure that your business can easily
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="DroneCard">
+                                            <div class="DroneCard_inner">
+                                                <div class="DroneCard_image">
+                                                    <img src="./images/Drone_3.png" alt="">
+                                                </div>
+                                                <div>
+                                                    <div class="upnormalsize Pfont Scolor">
+                                                        DJI 2030
+                                                    </div>
+                                                    <div>
+                                                        platform provides process to ensure that your business can easily
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Repeat the swiper-slide div for each drone card -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+    
+    
+    
+            <section id="Faq">
+                <div class="secmargin">
+                    <div class="secTitle">
+                        <div>
+                            <img src="./images/FAQs_icon.png" alt="Saudi">
+                        </div>
+                        <div class="Pfont Scolor secsize">
+                            FAQs
+                        </div>
+                    </div>
+                    <div class="sub-secmargin">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item  lessborder accordionBorder accordionspace">
+                                <h2 class="accordionBorder accordion-header " id="headingOne">
+                                    <button class="accordionBorder accordion-button collapsed upnormalsize Sfont Scolor"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                        aria-expanded="false" aria-controls="collapseOne">
+                                        Who can apply for a UAS license through the GACA portal?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde dolor, vero
+                                            inventore ducimus cumque nobis sit adipisci incidunt fuga fugiat eius quis?
+                                            Nihil
+                                            labore alias eligendi officia id esse deleniti numquam ab, excepturi laborum
+                                            quaerat
+                                            quam voluptas saepe delectus sed sunt ullam! Eum enim, sequi eligendi, ex
+                                            sint illum
+                                            accusamus, debitis neque architecto illo corrupti. Iste ex enim suscipit
+                                            perspiciatis.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item  lessborder accordionBorder accordionspace">
+                                <h2 class="accordionBorder accordion-header " id="headingTwo">
+                                    <button class="accordionBorder accordion-button collapsed upnormalsize Sfont Scolor"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        What is the process to apply for a UAS license?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde dolor, vero
+                                            inventore ducimus cumque nobis sit adipisci incidunt fuga fugiat eius quis?
+                                            Nihil
+                                            labore alias eligendi officia id esse deleniti numquam ab, excepturi laborum
+                                            quaerat
+                                            quam voluptas saepe delectus sed sunt ullam! Eum enim, sequi eligendi, ex
+                                            sint illum
+                                            accusamus, debitis neque architecto illo corrupti. Iste ex enim suscipit
+                                            perspiciatis.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item lessborder accordionBorder accordionspace">
+                                <h2 class="accordionBorder accordion-header " id="headingThree">
+                                    <button class="accordionBorder accordion-button collapsed upnormalsize Sfont Scolor"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        What documents are required for the application?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde dolor, vero
+                                            inventore ducimus cumque nobis sit adipisci incidunt fuga fugiat eius quis?
+                                            Nihil
+                                            labore alias eligendi officia id esse deleniti numquam ab, excepturi laborum
+                                            quaerat
+                                            quam voluptas saepe delectus sed sunt ullam! Eum enim, sequi eligendi, ex
+                                            sint illum
+                                            accusamus, debitis neque architecto illo corrupti. Iste ex enim suscipit
+                                            perspiciatis.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item lessborder accordionBorder accordionspace">
+                                <h2 class="accordionBorder accordion-header " id="headingFour">
+                                    <button class="accordionBorder accordion-button collapsed upnormalsize Sfont Scolor"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        Are there any training resources available?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde dolor, vero
+                                            inventore ducimus cumque nobis sit adipisci incidunt fuga fugiat eius quis?
+                                            Nihil
+                                            labore alias eligendi officia id esse deleniti numquam ab, excepturi laborum
+                                            quaerat
+                                            quam voluptas saepe delectus sed sunt ullam! Eum enim, sequi eligendi, ex
+                                            sint illum
+                                            accusamus, debitis neque architecto illo corrupti. Iste ex enim suscipit
+                                            perspiciatis.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-end">
+                            <div class="upnormalsize links ">
+                                <a href="#">Read more <span><img src="./images/Arrow.png" alt=""></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="Contact">
+            <div class="secmargin margin-bottom-0">
+                <div class="whiteSurface">
+                    <div class="container">
+                        <div style="padding: 40px 0;">
+                            <div class="row gx-5">
+                                <div class="col-md-6">
+                                    <div class="Pfont Scolor secsize">
+                                        Contact Us
+                                    </div>
+                                    <form action="mailto:dnnlshrf@gmail.com">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <input type="text" class="form-control" placeholder="Your Name.">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <input type="text" class="form-control" placeholder="Mobile No.">
+                                            </div>
+                                            <div class="col-12 mb-3">
+                                                <input name="subject" type="text" class="form-control"
+                                                    placeholder="Message Subject">
+                                            </div>
+                                            <div class="col-12 mb-3">
+                                                <textarea name="body" type="text" class="form-control"
+                                                    placeholder="Message Subject" rows="5"></textarea>
+                                            </div>
+                                        </div>
+    
+                                        <div class="form-cta mt-3">
+                                            <input class="sendbtm" type="submit" value="Send">
+                                        </div>
+                                    </form>
+    
+                                </div>
+                                <div class="col-md-6">
+                                    <div>
+                                        <img src="./images/UAS_logo.png" alt="">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div class="contactText Pfont darkColor">
+                                            General Authority Of Civil Aviation (GACA)
+                                        </div>
+                                        <div class="contactText Sfont darkColor">
+                                            Riyadh - King Abdulaziz Center For National Dialogue
+                                        </div>
+                                    </div>
+    
+                                    <div class="mt-3">
+                                        <ul class="darkColor contactText"
+                                            style="border-left: 8px solid #0075C9; padding: 10px 15px; list-style-position: inside;  list-style-type: none;  ">
+                                            <li>Fax : +966 (11) 5253222 - 5253111. </li>
+                                            <li>Free contact number: 8001168888.</li>
+                                            <li>outside KSA: 00966112682763.</li>
+                                            <li>Central : 0115253333</li>
+                                            <li>Email : gaca-info@gaca.gov.sa</li>
+                                        </ul>
+                                    </div>
+                                    <div class="mt-3">
+                                        <div class="contactText Pfont Scolor">
+                                            Follow Us on:
+                                        </div>
+                                        <div class="socialchanels">
+                                            <div class="social-item">
+                                                <a href="#">
+                                                    <img src="./images/X.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="social-item">
+                                                <a href="#">
+                                                    <img src="./images/Insta.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="social-item">
+                                                <a href="#">
+                                                    <img src="./images/Snapchat.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="social-item">
+                                                <a href="#">
+                                                    <img src="./images/Facebook.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="social-item">
+                                                <a href="#">
+                                                    <img src="./images/Youtube.png  " alt="">
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a class="darkColor contactText" href="#">
+                                                    /GACAKSA
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
         </div>
     </div>
     
+
+    <footer class="darkfooter">
+        <div class="container">
+            <div class="footerContents">
+                <div class="footer-rights Sfont">
+                    <div>
+                        &#169; All rights reserved to
+                    </div>
+                    <div>
+                        <img style="height: 20px;" src="./images/whiteLogo-xs.png" alt="GACA">
+                    </div>
+                    <div>
+                        General Authority of Civil Aviation
+                    </div>
+                </div>
+                <div class="footer-links" style="color: #4AB4FF;">
+                    <div>
+                        <a class="dark-link" href="#">Privacy Policy</a>
+                    </div>
+                    <div>
+                        <a class="dark-link" href="#">Secure Usage Policy</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./libraries/Jquery/Jquery.js"></script>
+    <script src="./libraries/pushymenu/js/pushy.js"></script>
+    <script src="./libraries/bootstrap-5.1.3/js/bootstrap.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/mainJs.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const cards = document.querySelectorAll(".card");
 
-            // Function to check if the screen width is above 1024px
-            function isDesktop() {
-                return window.innerWidth > 1024;
-            }
 
-            // Only add the click event listener on desktop
-            function setupCardToggle() {
-                if (isDesktop()) {
-                    cards.forEach(card => {
-                        card.addEventListener("click", toggleCard);
-                    });
-                } else {
-                    cards.forEach(card => {
-                        card.classList.add("expanded");
-                        card.removeEventListener("click", toggleCard);
-                    });
-                }
-            }
 
-            function toggleCard() {
-                // Collapse any currently expanded cards
-                cards.forEach(c => c.classList.remove("expanded"));
 
-                // Expand the clicked card
-                if (!this.classList.contains("expanded")) {
-                    this.classList.add("expanded");
-                }
-            }
 
-            // Initial setup
-            setupCardToggle();
 
-            // Add resize event listener to handle changes between desktop and mobile views
-            window.addEventListener("resize", function() {
-                setupCardToggle();
-            });
-        });
     </script>
 </body>
 
